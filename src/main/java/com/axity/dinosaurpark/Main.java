@@ -1,30 +1,28 @@
 package com.axity.dinosaurpark;
 
-// Imports de la configuración y modelos
-import com.axity.dinosaurpark.config.ParkConfig;
-import com.axity.dinosaurpark.model.Tourist;
+import com.axity.dinosaurpark.persistence.ExpenseRecord;
+import com.axity.dinosaurpark.persistence.PersistenceManager;
+import com.axity.dinosaurpark.persistence.RevenueRecord;
 
-// Imports de las zonas que acabas de crear
-import com.axity.dinosaurpark.zone.ArrivalZone;
-import com.axity.dinosaurpark.zone.CentralHub;
-import com.axity.dinosaurpark.zone.ParkZone;
 public class Main {
 
-public static void main(String[] args) {
+    public static void main(String[] args) {
+        // inicia gestor de archivos
+        PersistenceManager pm = new PersistenceManager();
+        System.out.println("--- SISTEMA DE PERSISTENCIA INICIADO ---");
 
-    double precioBoleto = ParkConfig.getInstance().getDouble("arrival.ticketPrice");
+        // simula una venta
+        RevenueRecord ingreso = new RevenueRecord("Boleto Alan Grant", 25.0, "2023-10-27");
+        pm.saveRevenue(ingreso);
 
-    Tourist t = new Tourist(101, "Malcolm");
-    ParkZone entrada = new ArrivalZone(precioBoleto);
-    ParkZone tienda = new CentralHub();
+        // simula mantenimiento gasto
+        ExpenseRecord gasto = new ExpenseRecord("Reparación de valla eléctrica", 1500.0, "2023-10-27");
+        pm.saveExpense(gasto);
 
-    System.out.println("--- INICIO DE SIMULACIÓN DE ZONAS ---");
-    entrada.simulateActivity(t);
-    System.out.println("-------------------------------------");
-    tienda.simulateActivity(t);
+        // simulamos algo que pasó (Evento para la bitácora)
+        pm.logEvent("Se detectó movimiento inusual en la zona del T-Rex.");
 
-    System.out.println("\nResumen de " + t.getName() + ":");
-    System.out.println("Estado final: " + t.getStatus());
-    System.out.println("Total gastado: $" + t.getMoneySpent());
-}
+        System.out.println("--- PRUEBA FINALIZADA. REVISA LOS ARCHIVOS CSV ---");
+    }
+
 }
