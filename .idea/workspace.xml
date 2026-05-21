@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01387bed-15b9-4ae9-9906-970944e5997e" name="Cambios" comment="Inicio del proyecto: Estructura base">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/config/ParkConfig.java" afterDir="false" />
+    <list default="true" id="01387bed-15b9-4ae9-9906-970944e5997e" name="Cambios" comment="Fase 2: Patrón Singleton implementado">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/model/CarnivoreDinosaur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/model/Dinosaur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/model/DinosaurStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/model/HerbivoreDinosaur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/model/Tourist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/model/TouristStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dinosaur-park/com/axity/dinosaurpark/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dinosaur-park/com/axity/dinosaurpark/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -36,6 +43,9 @@
     &quot;accountId&quot;: &quot;84c03ec2-cc47-4736-bfda-2faeeb189a34&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -49,7 +59,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Aplicación.Main (1).executor": "Run",
     "Aplicación.Main.executor": "Run",
+    "Aplicación.main.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.dinosaur-park [clean].executor": "Run",
     "Maven.dinosaur-park [compile].executor": "Run",
@@ -104,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779393889727</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fase 2: Patrón Singleton implementado">
+      <option name="closed" value="true" />
+      <created>1779396232510</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1779396232510</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +140,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inicio del proyecto: Estructura base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inicio del proyecto: Estructura base" />
+    <MESSAGE value="Fase 2: Patrón Singleton implementado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fase 2: Patrón Singleton implementado" />
   </component>
 </project>

@@ -1,15 +1,18 @@
 package com.axity.dinosaurpark;
 
-import com.axity.dinosaurpark.config.ParkConfig;
+import com.axity.dinosaurpark.model.CarnivoreDinosaur;
+import com.axity.dinosaurpark.model.Dinosaur;
+import com.axity.dinosaurpark.model.Tourist;
 
 public class Main {
-    public static void main(String[] args) {
-        // Obtenemos la configuración
-        ParkConfig config = ParkConfig.getInstance();
 
-        // Probamos leyendo los datos que pusiste en el archivo park.properties
-        System.out.println("--- PRUEBA DE CONFIGURACIÓN ---");
-        System.out.println("Turistas configurados: " + config.getInt("tourists"));
-        System.out.println("Precio boleto: $" + config.getDouble("arrival.ticketPrice"));
+    // quitamos el 1 para que vuelva a ser el punto de arranque oficial
+    public static void main(String[] args) {
+        Tourist t = new Tourist(1, "Grace");
+        Dinosaur d = new CarnivoreDinosaur(1, "T-Rex");
+
+        System.out.println("Turista: " + t.getName() + " Estado: " + t.getStatus());
+        System.out.println("Dino: " + d.getName() + " Come: " + d.getDiet());
     }
+
 }
