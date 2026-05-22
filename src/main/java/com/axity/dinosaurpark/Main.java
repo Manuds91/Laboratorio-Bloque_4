@@ -1,33 +1,40 @@
-package com.axity.dinosaurpark;
-
-import com.axity.dinosaurpark.event.SimulationEvent;
-import com.axity.dinosaurpark.event.DinosaurEscapeEvent;
-import com.axity.dinosaurpark.event.PowerOutageEvent;
-
-import com.axity.dinosaurpark.persistence.PersistenceManager;
-
-import java.util.Random;
-
-public class Main {
+package com.axity.dinosaurpark;import com.axity.dinosaurpark.config.ParkConfig;import com.axity.dinosaurpark.model.Tourist;import com.axity.dinosaurpark.persistence.PersistenceManager;import com.axity.dinosaurpark.simulation.SimulationEngine;import com.axity.dinosaurpark.zone.*;public class Main {
 
     public static void main(String[] args) {
+
+        // 1. Inicializar herramientas base
+
+        ParkConfig config = ParkConfig.getInstance();
+
         PersistenceManager pm = new PersistenceManager();
-        Random random = new Random();
 
-        SimulationEvent[] eventosPosibles = {
-                new DinosaurEscapeEvent(),
-                new PowerOutageEvent()
-        };
+        SimulationEngine engine = new SimulationEngine(pm);
 
-        System.out.println("---  INICIANDO MONITOREO ---");
 
-        int indiceAleatorio = random.nextInt(eventosPosibles.length);
-        SimulationEvent eventoOcurrido = eventosPosibles[indiceAleatorio];
 
-        System.out.println("\n>Alerta de seguridad:");
-        eventoOcurrido.execute(pm);
+        // 2. Crear Zonas
 
-        System.out.println("\n--- EL EVENTO HA SIDO REGISTRADO EN EVENTOS.CSV ---");
+        engine.addZone(new ArrivalZone(config.getDouble("arrival.ticketPrice")));
+        engine.addZone(new CentralHub());
+        engine.addZone(new PowerPlant());
+
+
+        // 3. Crear Turistas (basado en la configuración de la fase 2)
+
+        int cantidadTuristas = config.getInt("tourists");
+
+        for (int i = 1; i <= cantidadTuristas; i++) {
+
+            engine.addTourist(new Tourist(i, "Visitante_" + i));
+
+        }
+
+
+
+        // 4. ¡ARRANCAR MOTOR! (Simularemos 5 pasos de tiempo)
+
+        engine.runSimulation(5);
+
     }
 
 }
