@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01387bed-15b9-4ae9-9906-970944e5997e" name="Cambios" comment="Fase 4: Interfaz de zonas y primeras áreas" />
+    <list default="true" id="01387bed-15b9-4ae9-9906-970944e5997e" name="Cambios" comment="Fase 5: Persistencia">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/event/DinosaurEscapeEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/event/PowerOutageEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/event/SimulationEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/eventos.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gastos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/gastos.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingresos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ingresos.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dinosaur-park/com/axity/dinosaurpark/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dinosaur-park/com/axity/dinosaurpark/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779404444511</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fase 5: Persistencia">
+      <option name="closed" value="true" />
+      <created>1779409942397</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779409942397</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +201,7 @@
     <MESSAGE value="Fase 2: Patrón Singleton implementado" />
     <MESSAGE value="Fase 3: Modelos de Turista y Dinosaurios" />
     <MESSAGE value="Fase 4: Interfaz de zonas y primeras áreas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fase 4: Interfaz de zonas y primeras áreas" />
+    <MESSAGE value="Fase 5: Persistencia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fase 5: Persistencia" />
   </component>
 </project>

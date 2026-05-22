@@ -1,28 +1,33 @@
 package com.axity.dinosaurpark;
 
-import com.axity.dinosaurpark.persistence.ExpenseRecord;
+import com.axity.dinosaurpark.event.SimulationEvent;
+import com.axity.dinosaurpark.event.DinosaurEscapeEvent;
+import com.axity.dinosaurpark.event.PowerOutageEvent;
+
 import com.axity.dinosaurpark.persistence.PersistenceManager;
-import com.axity.dinosaurpark.persistence.RevenueRecord;
+
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-        // inicia gestor de archivos
         PersistenceManager pm = new PersistenceManager();
-        System.out.println("--- SISTEMA DE PERSISTENCIA INICIADO ---");
+        Random random = new Random();
 
-        // simula una venta
-        RevenueRecord ingreso = new RevenueRecord("Boleto Alan Grace", 25.0, "2023-10-27");
-        pm.saveRevenue(ingreso);
+        SimulationEvent[] eventosPosibles = {
+                new DinosaurEscapeEvent(),
+                new PowerOutageEvent()
+        };
 
-        // simula mantenimiento gasto
-        ExpenseRecord gasto = new ExpenseRecord("Reparación de valla eléctrica", 1500.0, "2023-10-27");
-        pm.saveExpense(gasto);
+        System.out.println("---  INICIANDO MONITOREO ---");
 
-        // simulamos algo que pasó (Evento para la bitácora)
-        pm.logEvent("Se detectó movimiento en la zona del T-Rex");
+        int indiceAleatorio = random.nextInt(eventosPosibles.length);
+        SimulationEvent eventoOcurrido = eventosPosibles[indiceAleatorio];
 
-        System.out.println("--- PRUEBA FINALIZADA ---");
+        System.out.println("\n>Alerta de seguridad:");
+        eventoOcurrido.execute(pm);
+
+        System.out.println("\n--- EL EVENTO HA SIDO REGISTRADO EN EVENTOS.CSV ---");
     }
 
 }
