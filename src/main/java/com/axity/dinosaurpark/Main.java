@@ -12,7 +12,7 @@ public class Main {
         System.out.println("--- SISTEMA DE PERSISTENCIA INICIADO ---");
 
         // simula una venta
-        RevenueRecord ingreso = new RevenueRecord("Boleto Alan Grant", 25.0, "2023-10-27");
+        RevenueRecord ingreso = new RevenueRecord("Boleto Alan Grace", 25.0, "2023-10-27");
         pm.saveRevenue(ingreso);
 
         // simula mantenimiento gasto
@@ -20,9 +20,9 @@ public class Main {
         pm.saveExpense(gasto);
 
         // simulamos algo que pasó (Evento para la bitácora)
-        pm.logEvent("Se detectó movimiento inusual en la zona del T-Rex.");
+        pm.logEvent("Se detectó movimiento en la zona del T-Rex");
 
-        System.out.println("--- PRUEBA FINALIZADA. REVISA LOS ARCHIVOS CSV ---");
+        System.out.println("--- PRUEBA FINALIZADA ---");
     }
 
 }
