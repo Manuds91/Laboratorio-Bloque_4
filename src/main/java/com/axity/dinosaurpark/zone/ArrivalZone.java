@@ -14,11 +14,11 @@ public class ArrivalZone implements ParkZone {
 
     @Override
     public void simulateActivity(Tourist tourist, PersistenceManager pm) {
-        // 1. Lógica de negocio
+        // Logica de negocio
         tourist.spend(ticketPrice);
         tourist.setStatus(TouristStatus.IN_PARK);
 
-        // 2. PERSISTENCIA (Lo que faltaba)
+        // PERSISTENCIA
         pm.saveRevenue(new com.axity.dinosaurpark.persistence.RevenueRecord(
                 "Boleto: " + tourist.getName(),
                 ticketPrice,

@@ -2,7 +2,7 @@ package com.axity.dinosaurpark;import com.axity.dinosaurpark.config.ParkConfig;i
 
     public static void main(String[] args) {
 
-        // 1. Inicializar herramientas base
+        // Inicializar herramientas
 
         ParkConfig config = ParkConfig.getInstance();
 
@@ -12,14 +12,14 @@ package com.axity.dinosaurpark;import com.axity.dinosaurpark.config.ParkConfig;i
 
 
 
-        // 2. Crear Zonas
+        // Crear Zonas
 
         engine.addZone(new ArrivalZone(config.getDouble("arrival.ticketPrice")));
         engine.addZone(new CentralHub());
         engine.addZone(new PowerPlant());
 
 
-        // 3. Crear Turistas (basado en la configuración de la fase 2)
+        //  Crear Turistas
 
         int cantidadTuristas = config.getInt("tourists");
 
@@ -31,7 +31,7 @@ package com.axity.dinosaurpark;import com.axity.dinosaurpark.config.ParkConfig;i
 
 
 
-        // 4. ¡ARRANCAR MOTOR! (Simularemos 5 pasos de tiempo)
+        // arrancar simulación
 
         engine.runSimulation(5);
 

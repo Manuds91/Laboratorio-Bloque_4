@@ -12,7 +12,7 @@ public class CentralHub implements ParkZone {
         double price = 15.0;
         tourist.spend(price);
 
-        // Guardamos en el CSV de ingresos
+
         pm.saveRevenue(new com.axity.dinosaurpark.persistence.RevenueRecord(
                 "Souvenir: " + tourist.getName(),
                 price,
