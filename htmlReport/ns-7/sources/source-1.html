@@ -1,0 +1,202 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > SimulationEngine</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.axity.dinosaurpark.simulation</a>
+</div>
+
+<h1>Coverage Summary for Class: SimulationEngine (com.axity.dinosaurpark.simulation)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SimulationEngine</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (6/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.6%
+  </span>
+  <span class="absValue">
+    (31/35)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.axity.dinosaurpark.simulation;
+&nbsp;
+&nbsp;import com.axity.dinosaurpark.event.*;
+&nbsp;import com.axity.dinosaurpark.model.Tourist;
+&nbsp;import com.axity.dinosaurpark.persistence.PersistenceManager;
+&nbsp;import com.axity.dinosaurpark.zone.ParkZone;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Random;
+&nbsp;
+&nbsp;public class SimulationEngine {
+<b class="fc">&nbsp;    private double totalIncome = 0;</b>
+<b class="fc">&nbsp;    private double totalExpenses = 0;</b>
+<b class="fc">&nbsp;    private double currentEnergy = 100.0;</b>
+&nbsp;    private PersistenceManager pm;
+&nbsp;    private List&lt;Tourist&gt; tourists;
+&nbsp;    private List&lt;ParkZone&gt; zones;
+&nbsp;    private List&lt;SimulationEvent&gt; possibleEvents;
+&nbsp;    private Random random;
+&nbsp;
+<b class="fc">&nbsp;    public SimulationEngine(PersistenceManager pm) {</b>
+<b class="fc">&nbsp;        this.pm = pm;</b>
+<b class="fc">&nbsp;        this.tourists = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.zones = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.possibleEvents = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.random = new Random();</b>
+&nbsp;
+&nbsp;        //eventos
+<b class="fc">&nbsp;        possibleEvents.add(new DinosaurEscapeEvent());</b>
+<b class="fc">&nbsp;        possibleEvents.add(new PowerOutageEvent());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;     // agregar zonas
+&nbsp;    public void addZone(ParkZone zone) {
+<b class="fc">&nbsp;        zones.add(zone);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //gregar turistas
+&nbsp;    public void addTourist(Tourist tourist) {
+<b class="fc">&nbsp;        tourists.add(tourist);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //bucle de simulacion
+&nbsp;    public void runSimulation(int totalSteps) {
+<b class="fc">&nbsp;        System.out.println(&quot;=== INICIANDO OPERACIONES EN EL PARQUE ===&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        for (int i = 1; i &lt;= totalSteps; i++) {</b>
+<b class="fc">&nbsp;            System.out.println(&quot;\n--- PASO DE SIMULACIÓN &quot; + i + &quot; ---&quot;);</b>
+&nbsp;
+&nbsp;            //  turistas por las zonas
+<b class="fc">&nbsp;            for (Tourist t : tourists) {</b>
+<b class="fc">&nbsp;                int zoneIdx = random.nextInt(zones.size());</b>
+<b class="fc">&nbsp;                ParkZone currentZone = zones.get(zoneIdx);</b>
+&nbsp;
+&nbsp;                //guardamos el dinero
+<b class="fc">&nbsp;                double moneyBefore = t.getMoneySpent();</b>
+&nbsp;
+<b class="fc">&nbsp;                currentZone.simulateActivity(t, pm);</b>
+&nbsp;
+&nbsp;                //calcula cuanto gasto en esa zona y lo se suma a ingresos
+<b class="fc">&nbsp;                double spentInZone = t.getMoneySpent() - moneyBefore;</b>
+<b class="fc">&nbsp;                totalIncome += spentInZone;</b>
+&nbsp;
+&nbsp;                //si la zona es la planta de energía, restamos energía y suma gastos
+<b class="pc">&nbsp;                if (currentZone instanceof com.axity.dinosaurpark.zone.PowerPlant) {</b>
+<b class="nc">&nbsp;                    totalExpenses += 100.0;</b>
+<b class="nc">&nbsp;                    currentEnergy -= 2.0;</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;
+&nbsp;            //probabilidad de que ocurra un evento aleatorio
+<b class="pc">&nbsp;            if (random.nextDouble() &lt; 0.20) {</b>
+<b class="nc">&nbsp;                int eventIdx = random.nextInt(possibleEvents.size());</b>
+<b class="nc">&nbsp;                possibleEvents.get(eventIdx).execute(pm);</b>
+&nbsp;            }
+<b class="fc">&nbsp;            try { Thread.sleep(500); } catch (InterruptedException e) {}</b>
+&nbsp;        }
+<b class="fc">&nbsp;        com.axity.dinosaurpark.monitoring.ParkMonitor monitor = new com.axity.dinosaurpark.monitoring.ParkMonitor();</b>
+&nbsp;
+<b class="fc">&nbsp;        int dinosCount = 20;</b>
+&nbsp;
+<b class="fc">&nbsp;        monitor.showGeneralStatus(tourists.size(), dinosCount, currentEnergy);</b>
+<b class="fc">&nbsp;        monitor.showFinancialReport(totalIncome, totalExpenses);</b>
+<b class="fc">&nbsp;        System.out.println(&quot;\n=== SIMULACION COMPLETADA ===&quot;);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-05-21 22:50</div>
+</div>
+</body>
+</html>

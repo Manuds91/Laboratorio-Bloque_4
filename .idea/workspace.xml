@@ -4,18 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01387bed-15b9-4ae9-9906-970944e5997e" name="Cambios" comment="Fase 7: Simulación&#10;corrección de cvs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/monitoring/ParkMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/simulation/SimulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/simulation/SimulationEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/zone/ArrivalZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/zone/ArrivalZone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/zone/CentralHub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/zone/CentralHub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/zone/PowerPlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axity/dinosaurpark/zone/PowerPlant.java" afterDir="false" />
+    <list default="true" id="01387bed-15b9-4ae9-9906-970944e5997e" name="Cambios" comment="Fase 8: Sistema de monitoreo">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/axity/dinosaurpark/ArrivalZoneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/axity/dinosaurpark/DinoModelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/axity/dinosaurpark/EngineTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/axity/dinosaurpark/EventStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/axity/dinosaurpark/MonitoringAndPersistenceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/axity/dinosaurpark/ParkConfigTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/axity/dinosaurpark/PersistenceLogicTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/axity/dinosaurpark/TouristTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/axity/dinosaurpark/ZoneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/eventos.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gastos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/gastos.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingresos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ingresos.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/dinosaur-park/com/dinosaurpark/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/dinosaurpark/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\Manuel\Documents\LABORATORIO4\dinosaur-park\htmlReport" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -41,6 +55,11 @@
     &quot;accountId&quot;: &quot;84c03ec2-cc47-4736-bfda-2faeeb189a34&quot;
   }
 }</component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="Todo en dinosaur-park" />
+    </enabled-run-configurations>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -60,9 +79,15 @@
     "Aplicación.Main (1).executor": "Run",
     "Aplicación.Main.executor": "Run",
     "Aplicación.main.executor": "Run",
+    "JUnit.ParkConfigTest.executor": "Run",
+    "JUnit.Todo en dinosaur-park.executor": "Coverage",
+    "JUnit.TouristTest.executor": "Run",
+    "JUnit.com.axity.dinosaurpark en dinosaur-park.executor": "Coverage",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.dinosaur-park [clean].executor": "Run",
     "Maven.dinosaur-park [compile].executor": "Run",
+    "Maven.dinosaur-park [test].executor": "Run",
+    "Maven.dinosaur-park [validate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -71,15 +96,12 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Aplicación.Main">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="dinosaur-park" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Manuel\Documents\LABORATORIO4\dinosaur-park\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Todo en dinosaur-park">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.axity.dinosaurpark.Main" />
       <module name="dinosaur-park" />
@@ -93,10 +115,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ParkConfigTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dinosaur-park" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.axity.dinosaurpark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.axity.dinosaurpark" />
+      <option name="MAIN_CLASS_NAME" value="com.axity.dinosaurpark.ParkConfigTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Todo en dinosaur-park" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dinosaur-park" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TouristTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dinosaur-park" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.axity.dinosaurpark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.axity.dinosaurpark" />
+      <option name="MAIN_CLASS_NAME" value="com.axity.dinosaurpark.TouristTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.axity.dinosaurpark en dinosaur-park" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dinosaur-park" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.axity.dinosaurpark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.axity.dinosaurpark" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Todo en dinosaur-park" />
+        <item itemvalue="JUnit.com.axity.dinosaurpark en dinosaur-park" />
+        <item itemvalue="JUnit.ParkConfigTest" />
+        <item itemvalue="JUnit.TouristTest" />
         <item itemvalue="Aplicación.Main" />
-        <item itemvalue="Aplicación.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779419170207</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fase 8: Sistema de monitoreo">
+      <option name="closed" value="true" />
+      <created>1779420338560</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779420338563</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,6 +302,13 @@
     <MESSAGE value="Fase 5: Persistencia" />
     <MESSAGE value="Fase 7: Simulación" />
     <MESSAGE value="Fase 7: Simulación&#10;corrección de cvs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fase 7: Simulación&#10;corrección de cvs" />
+    <MESSAGE value="Fase 8: Sistema de monitoreo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fase 8: Sistema de monitoreo" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/dinosaur_park$Todo_en_dinosaur_park.ic" NAME="Resultados de Cobertura de Todo en dinosaur-park" MODIFIED="1779425392228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/dinosaur_park$com_axity_dinosaurpark_en_dinosaur_park.ic" NAME="Resultados de Cobertura de com.axity.dinosaurpark en dinosaur-park" MODIFIED="1779423469329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.axity.dinosaurpark.*</FILTER>
+    </SUITE>
   </component>
 </project>

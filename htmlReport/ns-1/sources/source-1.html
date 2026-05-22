@@ -1,0 +1,156 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Main</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.axity.dinosaurpark</a>
+</div>
+
+<h1>Coverage Summary for Class: Main (com.axity.dinosaurpark)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Main</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode"><b class="nc">&nbsp;package com.axity.dinosaurpark;import com.axity.dinosaurpark.config.ParkConfig;import com.axity.dinosaurpark.model.Tourist;import com.axity.dinosaurpark.persistence.PersistenceManager;import com.axity.dinosaurpark.simulation.SimulationEngine;import com.axity.dinosaurpark.zone.*;public class Main {</b>
+&nbsp;
+&nbsp;    public static void main(String[] args) {
+&nbsp;
+&nbsp;        // Inicializar herramientas
+&nbsp;
+<b class="nc">&nbsp;        ParkConfig config = ParkConfig.getInstance();</b>
+&nbsp;
+<b class="nc">&nbsp;        PersistenceManager pm = new PersistenceManager();</b>
+&nbsp;
+<b class="nc">&nbsp;        SimulationEngine engine = new SimulationEngine(pm);</b>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;        // Crear Zonas
+&nbsp;
+<b class="nc">&nbsp;        engine.addZone(new ArrivalZone(config.getDouble(&quot;arrival.ticketPrice&quot;)));</b>
+<b class="nc">&nbsp;        engine.addZone(new CentralHub());</b>
+<b class="nc">&nbsp;        engine.addZone(new PowerPlant());</b>
+&nbsp;
+&nbsp;
+&nbsp;        //  Crear Turistas
+&nbsp;
+<b class="nc">&nbsp;        int cantidadTuristas = config.getInt(&quot;tourists&quot;);</b>
+&nbsp;
+<b class="nc">&nbsp;        for (int i = 1; i &lt;= cantidadTuristas; i++) {</b>
+&nbsp;
+<b class="nc">&nbsp;            engine.addTourist(new Tourist(i, &quot;Visitante_&quot; + i));</b>
+&nbsp;
+&nbsp;        }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;        // arrancar simulación
+&nbsp;
+<b class="nc">&nbsp;        engine.runSimulation(5);</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-05-21 22:50</div>
+</div>
+</body>
+</html>
